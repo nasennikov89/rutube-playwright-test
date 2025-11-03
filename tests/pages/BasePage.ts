@@ -6,4 +6,8 @@ export class BasePage {
   constructor(page: Page) {
     this.page = page;
   }
+
+  async closeCoockiesAlert() {
+    await this.page.getByRole('button', { name: 'Ок' }).click();
+  }
 }
