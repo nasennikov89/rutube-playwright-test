@@ -23,7 +23,16 @@ test('Проверка доступности элементов попап ув
   await mainPage.openNotificationPopup();
   await mainPage.notificationPopupHasCorrectAriaSnapshot();
 });
-test('Проверка доступности элементов модального окна авторизации ', async ({ mainPage }) => {
+test('Проверка доступности элементов модального окна авторизации', async ({ mainPage }) => {
   await mainPage.openAuthorizationModal();
   await mainPage.authorizationModalHasCorrectAriaSnapshot();
+});
+test('Проверка доступности элементов раскрытого меню', async ({ mainPage }) => {
+  await mainPage.openFullMenu();
+  await mainPage.fullMenuHasCorrectAriaSnapshot();
+});
+test('Переключение темы', async ({ mainPage }) => {
+  await mainPage.checkThemeAttributeValue('dark2021');
+  await mainPage.changeThemeToWhite();
+  await mainPage.checkThemeAttributeValue('white2022');
 });
