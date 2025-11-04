@@ -10,4 +10,8 @@ export class BasePage {
   async closeCoockiesAlert() {
     await this.page.getByRole('button', { name: 'Ок' }).click();
   }
+
+  async closeVpn() {
+    await this.page.getByRole('button', { name: 'закрыть' }).click();
+  }
 }
