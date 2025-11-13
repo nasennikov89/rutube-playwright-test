@@ -14,4 +14,7 @@ export class BasePage {
   async closeVpn() {
     await this.page.getByRole('button', { name: 'закрыть' }).click();
   }
+  async closeAds() {
+    await this.page.getByRole('button', { name: 'Закрыть', exact: true }).click();
+  }
 }
